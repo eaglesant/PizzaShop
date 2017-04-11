@@ -2,7 +2,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
-require 'sinatraactiverecord'
+require 'sinatra/activerecord'
 
 set :database, "sqlite3:pizzashop.db"
 
