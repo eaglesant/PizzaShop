@@ -1,0 +1,56 @@
+<style>
+	.block {
+		background: #E6E6E6;
+		padding: 10px;
+		width: 20%;
+		margin-left: 5%;
+	}
+	.block img {
+		margin: 0 auto;
+	}
+	.row :first-child {
+		margin-left: 0;
+	}
+	h2 {
+		margin: 30px;
+	}
+	.block #title {
+		font-size: 1.4em;
+		color: #DBA901;
+		margin-top: 20px;
+		text-align: center;
+	}
+	.block p {
+		color: #848484;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+	.block #desc {
+		color: #886A08;
+		text-align: center;
+		font-size: 1.2em;
+	}
+	.block p span {
+		color: #DBA901;
+	}
+</style>
+
+<h2>List of Pizza</h2>
+<div class="container-fluid">
+	<div class="row">
+		<% @products.each do |pizza| %>
+		<div class="col-md-4 block" style="">
+			<img src="<%= pizza.path_to_image %>" alt="<%= pizza.description %>" class="img-thumbnail">
+			<p id="title">Pizza <%= pizza.title %></p>
+			<p id="desc"><%= pizza.description %></p>
+			<p>Size: <span><%= pizza.size %> sm</span></p>
+			<p>Is spicy: <span><%= pizza.is_spicy? ? 'yes' : 'no' %></span></p>
+			<p>Vegeterian: <span><%= pizza.is_veg? ? 'yes' : 'no' %></span></p>
+			<p>Is best offer: <span><%= pizza.is_best_offer? ? 'yes' : 'no' %></span></p>
+			<p>Price: <span><%= pizza.price %> uan</span></p>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
