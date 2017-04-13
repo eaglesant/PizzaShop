@@ -13,10 +13,24 @@
 			<p>Vegeterian: <span><%= pizza.is_veg? ? 'yes' : 'no' %></span></p>
 			<p>Is best offer: <span><%= pizza.is_best_offer? ? 'yes' : 'no' %></span></p>
 			<p>Price: <span><%= pizza.price %> uan</span></p>
-		<button type="button" class="btn btn-success btn-sm" onclick="add_to_cart(<%= pizza.id %>)">Add to cart</button>
+			<div class="row">
+				<div class="col-md-6">
+					<button type="button" class="btn btn-success btn-sm" style="padding: 5px 30px;"" onclick="add_to_cart(<%= pizza.id %>)">+ 1</button>
+	
+				</div>
+				<!-- <div class="col-md-4">
+					<input type="text" style="width: 50px; margin-top: 2px; padding: 0 16px; " placeholder="0">
+				</div> -->
+				<div class="col-md-6">
+					<button type="button" class="btn btn-danger btn-sm" style="padding: 5px 30px;" onclick="del_from_cart(<%= pizza.id %>)">- 1</button>
+				</div>
+			</div>
+		
 		</div>
 		<% end %>
 	</div>
 </div>
 
 
+				
+					
