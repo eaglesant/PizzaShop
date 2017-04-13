@@ -23,3 +23,6 @@ end
 get '/pizzas' do
 	erb :pizzas
 end
+post '/cart' do
+	erb :cart
+end
