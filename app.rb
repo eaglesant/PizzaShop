@@ -39,8 +39,8 @@ post '/cart' do
 	# erb :cart
 
 	#=======================
-	orders = params[:orders]
-	@arr = parse_orders_item orders
+	@orders = params[:orders]
+	@arr = parse_orders_item @orders
 	@arr.each do |item|
 		item[0] = Product.find(item[0])
 	end

@@ -32,3 +32,28 @@
  		</tr>
  	</tfoot>
 </table>
+<br>
+<br>
+<br>
+<h2>Your Order</h2>
+
+<form action="/place_order" method="POST" style="width: 370px;">
+    <div class="form-group">
+    <input type="text" name="order[orders_input]" type="text" class="form-control" value="<%= @orders %>">
+  </div>
+  <div class="form-group">
+    <label for="user_name">Your name</label>
+    <input type="text" name="order[name]" class="form-control" id="user_name" placeholder="Enter your name" ">
+  </div>
+  <div class="form-group">
+    <label for="phone">Your phone</label>
+    <input type="text" name="order[phone]" class="form-control" id="phone" placeholder="Your phone">
+  </div>
+
+  <div class="form-group">
+    <label for="address">Your address</label>
+    <input type="text" name="order[address]" class="form-control" id="phone" placeholder="Your phone">
+  </div>
+  <button type="submit" class="btn btn-success btn-lg">Ordered</button>
+</form>
+
