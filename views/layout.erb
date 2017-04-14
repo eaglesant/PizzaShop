@@ -37,12 +37,13 @@
 							<li><a href="/about">About</a></li>
 							<li><a href="/pizzas">Pizzas</a></li>
 							<li><a href="/contacts">Contacts</a></li>
+							<li><a href="/cart">Cart</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<form action="/cart" method="POST">
 									<input id="orders_input" type="hidden" name="orders">
-									<input id="orders_button" type="submit" class="btn btn-primary btn-lg" value="Cart (....)">
+									<input id="orders_button" type="submit" class="btn btn-primary btn-lg" value="Cart (....)" name="orders_button">
 								</form>
 							</li>
 						</ul>
@@ -59,6 +60,12 @@
 			</div>
 
 
+	<script type="text/javascript">
+		$(function(){
+			get_orders();
+			update_orders_button()
+		});
+	</script>
 			
 		</body>
 		</html>
