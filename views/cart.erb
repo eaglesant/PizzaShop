@@ -39,7 +39,7 @@
 
 <form action="/place_order" method="POST" style="width: 370px;">
     <div class="form-group">
-    <input type="text" name="order[order]" type="text" class="form-control" value="<%= @orders %>">
+    <input name="order[order]" type="hidden" class="form-control" value="<%= @orders %>">
   </div>
   <div class="form-group">
     <label for="user_name">Your name</label>
@@ -52,8 +52,9 @@
 
   <div class="form-group">
     <label for="address">Your address</label>
-    <input type="text" name="order[address]" class="form-control" id="phone" placeholder="Your phone">
+    <input type="text" name="order[address]" class="form-control" id="address" placeholder="Your phone">
   </div>
   <button type="submit" class="btn btn-success btn-lg">Ordered</button>
+  <button onclick="cancel_order(); return false;" class="btn btn-danger btn-lg">Cancel</button>
 </form>
 

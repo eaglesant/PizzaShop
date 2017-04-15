@@ -17,7 +17,7 @@ function add_to_cart(id)
 	window.localStorage.setItem(key, x);
 	
 	get_orders();
-	update_orders_button()
+	update_orders_button();
 }
 function del_from_cart(id)
 {
@@ -28,7 +28,7 @@ function del_from_cart(id)
 	window.localStorage.setItem(key, x);
 	
 	get_orders();
-	update_orders_button()
+	update_orders_button();
 }
 function get_number_of_itemsCart()
 {
@@ -71,4 +71,11 @@ function update_orders_button()
 {
 	var text = 'Cart (' + get_number_of_itemsCart() + ')';
 	$('#orders_button').val(text);
+}
+
+function cancel_order()
+{
+	window.localStorage.clear();
+	get_orders();
+	update_orders_button();
 }

@@ -71,8 +71,10 @@ get '/place_order' do
   erb :place_order
 end
 post '/place_order' do
-	@ord = Order.new params[:order]
-	@ord.save
+	# @ord = Order.new params[:order]
+	# @ord.save
+	# или
+	@ord = Order.create params[:order]
   
   erb :place_order
 end
