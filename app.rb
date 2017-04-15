@@ -8,9 +8,13 @@ set :database, "sqlite3:pizzashop.db"
 
 before do
 	@products = Product.all
+	@orders_all = Order.all
 end
 
 class Product < ActiveRecord::Base
+	
+end
+class Order < ActiveRecord::Base
 	
 end
 
@@ -62,4 +66,13 @@ arr = []
 		arr.push arr2
 	end
 	return arr
+end
+get '/place_order' do
+  erb :place_order
+end
+post '/place_order' do
+	@ord = Order.new params[:order]
+	@ord.save
+  
+  erb :place_order
 end
