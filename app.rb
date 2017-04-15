@@ -45,6 +45,11 @@ post '/cart' do
 	#=======================
 	@orders = params[:orders]
 	@arr = parse_orders_item @orders
+
+	if @arr.length == 0
+		return erb "Your cart is empty!"
+	end
+
 	@arr.each do |item|
 		item[0] = Product.find(item[0])
 	end
